@@ -111,7 +111,7 @@ public final class NettyRpcClient implements RpcRequestTransport {
                     .messageType(RpcConstants.REQUEST_TYPE).build();
             channel.writeAndFlush(rpcMessage).addListener((ChannelFutureListener) future -> {
                 if (future.isSuccess()) {
-                    log.info("client send message: [{}]", rpcMessage);
+//                    log.info("client send message: [{}]", rpcMessage);
                 } else {
                     future.channel().close();
                     resultFuture.completeExceptionally(future.cause());
